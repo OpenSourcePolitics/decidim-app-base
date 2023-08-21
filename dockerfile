@@ -8,3 +8,5 @@ RUN apk add --no-cache --update nodejs yarn tzdata git icu-dev libpq-dev build-b
     ./configure && \
     make && \
     make install
+
+# jemalloc is now installed in /usr/local/lib/libjemalloc.so.2
