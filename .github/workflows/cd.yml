@@ -1,0 +1,15 @@
+name: "CD"
+on: [push]
+
+jobs:
+  push_image:
+    name: Push image
+    runs-on: ubuntu-latest
+    steps:
+      - uses: OpenSourcePolitics/build-and-push-images-action@master
+        with:
+          registry: ${{ vars.REGISTRY_ENDPOINT }}
+          namespace: ${{ vars.REGISTRY_NAMESPACE }}
+          password: ${{ secrets.TOKEN }}
+          image_name: ${{ vars.IMAGE_NAME }}
+          tag: "2.7.5-alpine-jemalloc"
