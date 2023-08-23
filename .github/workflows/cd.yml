@@ -5,6 +5,9 @@ jobs:
   push_image:
     name: Push image
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ruby_version: [2.7.5, 3.0.2]
     steps:
       - uses: OpenSourcePolitics/build-and-push-images-action@master
         with:
@@ -12,4 +15,4 @@ jobs:
           namespace: ${{ vars.REGISTRY_NAMESPACE }}
           password: ${{ secrets.TOKEN }}
           image_name: ${{ vars.IMAGE_NAME }}
-          tag: "2.7.5-alpine-jemalloc"
+          tag: ${{ matrix.ruby_version }}-alpine-jemalloc
