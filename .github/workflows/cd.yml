@@ -9,7 +9,7 @@ jobs:
       matrix:
         ruby_version: [2.7.5, 3.0.2]
     steps:
-      - uses: OpenSourcePolitics/build-and-push-images-action@master
+      - uses: OpenSourcePolitics/build-and-push-images-action@develop
         with:
           registry: ${{ vars.REGISTRY_ENDPOINT }}
           namespace: ${{ vars.REGISTRY_NAMESPACE }}
