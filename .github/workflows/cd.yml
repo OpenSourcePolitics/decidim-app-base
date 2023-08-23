@@ -6,6 +6,7 @@ jobs:
     name: Push image
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         ruby_version: [2.7.5, 3.0.2]
     steps:
